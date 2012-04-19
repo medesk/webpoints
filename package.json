@@ -8,5 +8,6 @@
 	},
 	"keywords": ["webpoints", "framework", "express", "restful", "rest", "web"],
 	"repository": "https://github.com/sakno/webpoints",
-	"engines": {"node": ">= 0.5.0 < 0.7.0"}
+	"engines": {"node": ">= 0.5.0 < 0.7.0"},
+	"main": "lib/webpoints.js"
 }
