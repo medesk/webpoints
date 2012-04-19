@@ -1,7 +1,7 @@
 WebPoints is a web framework based on [ExpressJS](http://expressjs.com/) for [node](http://nodejs.org). It is oriented on simple RESTful service development with JSON serialization. 
 
 ```js
-var WebPoints = require('webpoints'), app = new WebPoints();
+var WebPoints = require('webpoints').Application, app = new WebPoints();
 
 app.endpoints['/'] = {
   method: 'get',
