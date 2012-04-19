@@ -3,3 +3,4 @@ docs/
 examples/
 .project
 README.md~
+npm-debug.log
