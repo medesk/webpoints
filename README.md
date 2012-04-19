@@ -20,6 +20,29 @@ app.endpoints['files'] = process.env['HTMLPAGES'];
 app.run(3000);
 ```
 
+You can use WebPoints with your existing Express application
+
+```js
+var express = require('express'), WebPoints = require('webpoints').Application;
+var app = express(), points = new WebPoints();
+
+app.get('/', function(req, res){
+  res.send('Hello World');
+});
+
+points.operations['/sum'] = {
+  method: 'get',
+  serialize: true,
+  params: {x: {deserialize: true}, y: {deserialize: true, 'default': 0}},
+  handler: function(x, y, callback) { callback(x + y); }
+};
+
+points.export(app);
+
+app.listen(3000);
+
+```
+
 ## Installation
 
     $ npm install webpoints
