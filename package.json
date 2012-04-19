@@ -1,0 +1,12 @@
+{
+	"name": "webpoints",
+	"description": "ExpressJS-based RESTful service development framework",
+	"version": "0.0.1",
+	"author": "Sakno Roman <sakno@tncor.com>",
+	"dependencies": {
+		"express": "2.5.8"
+	},
+	"keywords": ["webpoints", "framework", "express", "restful", "rest", "web"],
+	"repository": "https://github.com/sakno/webpoints",
+	"engines": {"node": ">= 0.5.0 < 0.7.0"}
+}
