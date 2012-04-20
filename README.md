@@ -37,7 +37,7 @@ points.operations['/sum'] = {
   handler: function(x, y, callback) { callback(x + y); }
 };
 
-points.export(app);
+points.exportTo(app);
 
 app.listen(3000);
 
