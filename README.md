@@ -1,7 +1,7 @@
 WebPoints is a web framework build on top of [ExpressJS](http://expressjs.com/) for [node](http://nodejs.org). It is oriented on RESTful service development with JSON serialization. NOTE: It is not a template engine consolidation library.
 
 ```js
-var WebPoints = require('webpoints').Application, app = new WebPoints();
+var Application = require('webpoints').Application, app = new Application();
 
 app.endpoints['/'] = {
   method: 'get',
@@ -55,6 +55,7 @@ app.listen(3000);
    * Built-in JSON Schema validation of input arguments passed from network;
    * Supports ExpressJS middleware and engine;
    * Extensible declarative model;
+   * Postconditions and preconditions for endpoints;
 
 ## License 
 
