@@ -2,7 +2,7 @@ var WebPoints = require('../');
 var Application = WebPoints.Application, 
 	SyncHandler = WebPoints.SyncHandler, 
 	DefaultHelpProvider = WebPoints.helpProviders.DefaultHelpProvider,
-	ContractHandler = WebPoints.ContractHandler,
+	designByContract = WebPoints.designByContract,
 	NumberParam = WebPoints.parameters.NumberParam;
 
 var app = new Application();
@@ -25,7 +25,7 @@ app.operations['/div'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: {deserialize: true}, y: {deserialize: true}},
-	handler: ContractHandler({
+	handler: designByContract({
 		requires: function(x, y, callback){ callback(y != 0, 'Denominator cannot be zero.'); },
 		handler: function(x, y, callback){ callback(x / y); },
 		ensures: function(x, y, result, callback){ callback(!isNaN(result[0])); }
