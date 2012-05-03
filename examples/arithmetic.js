@@ -32,8 +32,11 @@ app.operations['/div'] = {
 	})
 }
 
-app.operations['/help'] = new DefaultHelpProvider(app.operations);
+app.configurations['development'] = {
+	'/help': new DefaultHelpProvider(app.operations)
+};
 
-console.info('This example demonstrates a simple RESTful service with three endpoints: /sum, /sub, /div, /help.')
+console.info('This example demonstrates a simple RESTful service with three endpoints: /sum, /sub, /div.');
+console.info('To enable /help endpoints, start the example with NODE_ENV=development variable.')
 
 app.run(4000);
