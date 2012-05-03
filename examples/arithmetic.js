@@ -2,21 +2,22 @@ var WebPoints = require('../');
 var Application = WebPoints.Application, 
 	SyncHandler = WebPoints.SyncHandler, 
 	DefaultHelpProvider = WebPoints.helpProviders.DefaultHelpProvider,
-	ContractHandler = WebPoints.ContractHandler;
+	ContractHandler = WebPoints.ContractHandler,
+	NumberParam = WebPoints.parameters.NumberParam;
 
 var app = new Application();
 
 app.operations['/sum'] = {
 	method: 'get',
 	serialize: true,
-	params: {x: {deserialize: true}, y: {deserialize: true}},
+	params: {x: new NumberParam(), y: new NumberParam()},
 	handler: SyncHandler(function(x, y){ return x + y; })
 };
 
 app.operations['/sub'] = {
 	method: 'get',
 	serialize: true,
-	params: {x: {deserialize: true}, y: {deserialize: true}},
+	params: {x: new NumberParam(), y: new NumberParam()},
 	handler: SyncHandler(function(x, y){ return x - y; })
 };
 
