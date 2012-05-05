@@ -30,7 +30,7 @@ app.operations['/div'] = {
 	requires: function(x, y, callback){ callback(y != 0, 'Denominator cannot be zero.'); },
 	handler: function(x, y, callback){ callback(x / y); },
 	ensures: function(x, y, result, callback){ callback(!isNaN(result[0])); }
-}
+};
 
 app.configurations['development'] = {
 	'/help': new DefaultHelpProvider(app.operations)

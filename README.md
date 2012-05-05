@@ -56,6 +56,7 @@ app.listen(3000);
    * Supports ExpressJS middleware and engine;
    * Extensible declarative model;
    * Postconditions and preconditions for endpoints;
+   * Long-running tasks support (with HTTP-202 status and task monitors).
 
 ## License 
 
