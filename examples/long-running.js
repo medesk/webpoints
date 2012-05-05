@@ -1,8 +1,8 @@
 //This example demonstrates long-running tasks
-var WebPoints = require('../');
-var Application = WebPoints.Application,
-	TaskMonitorEndpoint = WebPoints.features.taskModel.TaskMonitorEndpoint,
-	TaskScheduler = WebPoints.features.taskModel.TaskScheduler;
+var webpoints = require('../');
+var Application = webpoints.Application,
+	TaskMonitorEndpoint = webpoints.features.taskModel.TaskMonitorEndpoint,
+	TaskScheduler = webpoints.features.taskModel.TaskScheduler;
 	
 var app = new Application(), scheduler = new TaskScheduler();
 

@@ -1,9 +1,9 @@
-var WebPoints = require('../');
-var Application = WebPoints.Application, 
-	syncHandler = WebPoints.syncHandler, 
-	DefaultHelpProvider = WebPoints.helpProviders.DefaultHelpProvider,
-	codeContracts = WebPoints.features.codeContracts,
-	NumberParam = WebPoints.parameters.NumberParam;
+var webpoints = require('../');
+var Application = webpoints.Application, 
+	syncHandler = webpoints.syncHandler, 
+	DefaultHelpProvider = webpoints.helpProviders.DefaultHelpProvider,
+	codeContracts = webpoints.features.codeContracts,
+	NumberParam = webpoints.parameters.NumberParam;
 
 var app = new Application();
 //Enable code contracts
