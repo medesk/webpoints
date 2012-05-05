@@ -1,35 +1,35 @@
 var WebPoints = require('../');
 var Application = WebPoints.Application, 
-	SyncHandler = WebPoints.SyncHandler, 
+	syncHandler = WebPoints.syncHandler, 
 	DefaultHelpProvider = WebPoints.helpProviders.DefaultHelpProvider,
-	designByContract = WebPoints.designByContract,
+	codeContracts = WebPoints.features.codeContracts,
 	NumberParam = WebPoints.parameters.NumberParam;
 
 var app = new Application();
+//Enable code contracts
+app.features = [codeContracts];
 
 app.operations['/sum'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: new NumberParam(), y: new NumberParam()},
-	handler: SyncHandler(function(x, y){ return x + y; })
+	handler: syncHandler(function(x, y){ return x + y; })
 };
 
 app.operations['/sub'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: new NumberParam(), y: new NumberParam()},
-	handler: SyncHandler(function(x, y){ return x - y; })
+	handler: syncHandler(function(x, y){ return x - y; })
 };
 
 app.operations['/div'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: {deserialize: true}, y: {deserialize: true}},
-	handler: designByContract({
-		requires: function(x, y, callback){ callback(y != 0, 'Denominator cannot be zero.'); },
-		handler: function(x, y, callback){ callback(x / y); },
-		ensures: function(x, y, result, callback){ callback(!isNaN(result[0])); }
-	})
+	requires: function(x, y, callback){ callback(y != 0, 'Denominator cannot be zero.'); },
+	handler: function(x, y, callback){ callback(x / y); },
+	ensures: function(x, y, result, callback){ callback(!isNaN(result[0])); }
 }
 
 app.configurations['development'] = {
