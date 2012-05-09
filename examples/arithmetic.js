@@ -1,26 +1,28 @@
 var WebPoints = require('../');
 var Application = WebPoints.Application, 
-	syncHandler = WebPoints.syncHandler, 
+	syncHandler = WebPoints.features.syncHandler, 
 	DefaultHelpProvider = WebPoints.helpProviders.DefaultHelpProvider,
 	codeContracts = WebPoints.features.codeContracts,
 	NumberParam = WebPoints.parameters.NumberParam;
 
 var app = new Application();
 //Enable code contracts
-app.features = [codeContracts];
+app.features = [codeContracts, syncHandler];
 
 app.operations['/sum'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: new NumberParam(), y: new NumberParam()},
-	handler: syncHandler(function(x, y){ return x + y; })
+	handler: function(x, y){ return x + y; },
+	synchronous: true	//handled by syncHandler feature
 };
 
 app.operations['/sub'] = {
 	method: 'get',
 	serialize: true,
 	params: {x: new NumberParam(), y: new NumberParam()},
-	handler: syncHandler(function(x, y){ return x - y; })
+	handler: function(x, y){ return x - y; },
+	synchronous: true
 };
 
 app.operations['/div'] = {
