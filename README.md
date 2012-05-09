@@ -54,8 +54,9 @@ app.listen(3000);
    * JSON deserialization/serialization of parameters can be replaced with custom formatter. For example, you can add XML deserializer for REST operation;
    * Built-in JSON Schema validation of input arguments passed from network;
    * Supports ExpressJS middleware and engine;
-   * Extensible declarative model;
-   * Postconditions and preconditions for endpoints;
+   * [Extensible declarative model](https://github.com/sakno/webpoints/wiki/Features);
+   * [Postconditions and preconditions](https://github.com/sakno/webpoints/wiki/Preconditions-and-postconditions) for endpoints;
+   * [Long-running tasks](https://github.com/sakno/webpoints/wiki/Long-running-tasks) support (with HTTP-202 status and task monitors).
 
 ## License 
 
