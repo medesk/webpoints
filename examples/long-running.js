@@ -5,7 +5,7 @@ var Application = webpoints.Application,
 	TaskScheduler = webpoints.features.taskModel.TaskScheduler,
 	ProgressNotification = webpoints.features.taskModel.AsyncProgressNotification;
 	
-var app = new Application(), scheduler = new TaskScheduler();
+var app = new Application(), scheduler = new TaskScheduler(null, {tcinterval: 6000});
 
 //Enable long-running operations management
 app.features = [scheduler];
