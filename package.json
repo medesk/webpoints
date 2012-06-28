@@ -1,7 +1,7 @@
 {
 	"name": "webpoints",
 	"description": "ExpressJS-based RESTful service development framework",
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"author": "Sakno Roman <sakno@tncor.com>",
 	"dependencies": {
 		"express": "2.5.8",
