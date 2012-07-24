@@ -2,3 +2,7 @@
 README.md~
 npm-debug.log
 node_modules/
+examples/*.js~
+lib/*.js~
+lib/features/*.js~
+*~
